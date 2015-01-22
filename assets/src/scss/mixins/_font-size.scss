@@ -1,0 +1,9 @@
+// REM output based on the $em-base variable with pixel fallback
+@mixin font-size($pxVal) {
+    @if not unitless($pxVal) {
+        $pxVal: strip-unit($pxVal);
+    }
+
+    font-size: $pxVal * 1px;
+    font-size: rem($pxVal);
+}

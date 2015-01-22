@@ -1,0 +1,64 @@
+@import "neat/app/assets/stylesheets/neat-helpers";
+
+// Common
+// -------------------------------------
+
+// Disable all deprecation warnings. Defaults to false. Set with a !global flag. @type Bool
+$disable-warnings: false !default;
+
+// Sets the relative width of a single grid column. The unit used should be the same one used to define $gutter. Set with the !global flag.
+$column: golden-ratio(1em, 3) !default;
+
+// Sets the relative width of a single grid gutter. The unit used should be the same one used to define $column. Set with the !global flag.
+$gutter: golden-ratio(1em, 1) !default;
+
+// Sets the total number of columns in the grid. Its value can be overridden inside a media query using the media() mixin. Set with the !global flag.
+$grid-columns: 12 !default;
+
+// Sets the max-width property of the element that includes outer-container(). Set with the !global flag.
+$max-width: em(1088) !default;
+
+// When set to true, it sets the box-sizing property of all elements to `border-box`. Set with a `!global` flag.
+//
+// @type Bool
+//
+// @example css - CSS Output
+//   html {
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box; }
+//
+//   *, *:before, *:after {
+//     -webkit-box-sizing: inherit;
+//     -moz-box-sizing: inherit;
+//     box-sizing: inherit;
+//   }
+$border-box-sizing: true !default;
+
+// Sets the default [media feature](http://www.w3.org/TR/css3-mediaqueries/#media) that `media()` and `new-breakpoint()` revert to when only a breakpoint value is passed. Set with a `!global` flag. @type String
+$default-feature: min-width; // Default @media feature for the breakpoint() mixin
+
+//Sets the default layout direction of the grid. Can be `LTR` or `RTL`. Set with a `!global` flag. @type String
+$default-layout-direction: LTR !default;
+
+// Define your breakpoints
+$tablet: new-breakpoint(max-width 768px 8);
+$mobile: new-breakpoint(max-width 480px 4);
+
+// Displays the visual grid when set to true. The overlaid grid may be few pixels off depending on the browser's rendering engine and pixel rounding algorithm. Set with the `!global` flag.
+// @type Bool
+$visual-grid: false !default;
+
+// Sets the visual grid color. Set with `!global` flag.
+// @type Color
+$visual-grid-color: #EEE !default;
+
+// Sets the `z-index` property of the visual grid. Can be `back` (behind content) or `front` (in front of content). Set with `!global` flag.
+// @type String
+$visual-grid-index: back !default;
+
+// Sets the opacity property of the visual grid. Set with `!global` flag.
+// @type Number (unitless)
+$visual-grid-opacity: 0.4 !default;
+
+$visual-grid-breakpoints: () !default;

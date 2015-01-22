@@ -1,0 +1,13 @@
+// Calculates percent based on a given with. Defaults to $max-width variable
+// @author Markus Schober
+@function percent($pixels, $base: $max-width) {
+    @if not unitless($pixels) {
+        $pixels: strip-units($pixels)
+    }
+
+    @if not unitless($base) {
+        $base: strip-units($base);
+    }
+
+    @return percentage( $pixels / $base );
+}
