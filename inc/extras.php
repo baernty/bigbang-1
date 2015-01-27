@@ -50,26 +50,25 @@ if (version_compare($GLOBALS['wp_version'], '4.1', '<'))
     }
 
     add_filter('wp_title', 'bb_wp_title', 10, 2);
+
+
+    /**
+     * Title shim for sites older than Wordpress 4.1.
+     * TODO: Remove this function when WordPress 4.3 is released.
+     *
+     * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+     * @author Markus Schober
+     * @since  1.0.0
+     */
+    function bb_render_title()
+    {
+        ?>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <?php
+    }
+
+    add_action('wp_head', 'bb_render_title');
 }
-
-
-
-/**
- * Title shim for sites older than Wordpress 4.1.
- * TODO: Remove this function when WordPress 4.3 is released.
- *
- * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
- * @author Markus Schober
- * @since  1.0.0
- */
-function bb_render_title()
-{
-    ?>
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <?php
-}
-
-add_action('wp_head', 'bb_render_title');
 
 
 
