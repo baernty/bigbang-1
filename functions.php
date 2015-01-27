@@ -211,7 +211,7 @@ if (!function_exists('bb_scripts'))
         wp_register_script(
             'jquery',
             'https://cdnjs.cloudflare.com/ajax/libs/jquery/'. $jQuery_version . '/jquery.min.js',
-            false,
+            array(),
             $jQuery_version,
             true
         );
